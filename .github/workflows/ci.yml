@@ -47,8 +47,17 @@ jobs:
       - name: Shellcheck build script
         run: shellcheck scripts/build-reference.sh
 
-      - name: Install pandoc
-        run: sudo apt-get update && sudo apt-get install -y pandoc
+      # Pin pandoc to the version the committed reference was authored with, so
+      # regeneration is byte-reproducible. Distro apt pandoc floats by release
+      # (Ubuntu noble ships 3.1.3) and its Markdown output differs cosmetically
+      # from 3.10, which would produce false drift warnings.
+      - name: Install pinned pandoc 3.10
+        run: |
+          curl -sSL -o /tmp/pandoc.tar.gz \
+            https://github.com/jgm/pandoc/releases/download/3.10/pandoc-3.10-linux-amd64.tar.gz
+          echo "e0f8af62d0f267d22baa5bcefe6d5dda3a097ccc60de794b759fe03159923244  /tmp/pandoc.tar.gz" | sha256sum -c -
+          tar xzf /tmp/pandoc.tar.gz -C /tmp
+          echo "/tmp/pandoc-3.10/bin" >> "$GITHUB_PATH"
 
       - name: Regenerate reference from live W3C source
         run: ./scripts/build-reference.sh

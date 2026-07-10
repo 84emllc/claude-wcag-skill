@@ -2,6 +2,11 @@
 # Regenerate references/wcag-2.2-full.md from the live W3C source.
 # Requires: curl, pandoc. Preserves all normative text; strips HTML wrappers;
 # re-applies the W3C attribution header.
+#
+# Reproducibility: the committed reference is authored with pandoc 3.10. Other
+# pandoc versions convert the same HTML to cosmetically different Markdown
+# (different escaping/list markers), which passes validate.mjs but shows as a
+# large no-op diff. Use pandoc 3.10 to reproduce the committed file byte-for-byte.
 set -euo pipefail
 
 SRC="https://www.w3.org/TR/WCAG22/"
@@ -13,6 +18,8 @@ trap 'rm -f "$TMP_HTML" "$TMP_MD"' EXIT
 
 command -v curl >/dev/null || { echo "curl not found" >&2; exit 1; }
 command -v pandoc >/dev/null || { echo "pandoc not found" >&2; exit 1; }
+
+echo "Using $(pandoc --version | head -1) (committed reference authored with pandoc 3.10)"
 
 echo "Fetching $SRC"
 curl -sL -A "Mozilla/5.0" "$SRC" -o "$TMP_HTML"
