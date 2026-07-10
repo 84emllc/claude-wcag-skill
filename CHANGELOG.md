@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- CI `build-reference` job: shellchecks the setup script, installs pandoc,
+  regenerates the reference from the live W3C source, and re-validates it, so
+  the clone-to-setup path is exercised on every push and PR.
+- Weekly scheduled CI run to surface upstream WCAG spec drift.
+
 ## [0.1.0] - 2026-07-10
 
 ### Added
