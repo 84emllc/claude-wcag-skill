@@ -1,0 +1,37 @@
+NOTICE
+======
+
+This repository combines two separately licensed bodies of work.
+
+1. Original work (MIT)
+----------------------
+SKILL.md, scripts/, .github/, and all repository documentation (README, AGENTS,
+CHANGELOG, this NOTICE) are original works by 84EM LLC, licensed under the MIT
+License (see LICENSE).
+
+2. Reproduced W3C specification (W3C Document License)
+------------------------------------------------------
+references/wcag-2.2-full.md reproduces:
+
+    Web Content Accessibility Guidelines (WCAG) 2.2
+    W3C Recommendation, 12 December 2024
+    https://www.w3.org/TR/WCAG22/
+    Copyright © 2024 World Wide Web Consortium (W3C).
+    https://www.w3.org/
+
+This material is used under the W3C Document License:
+    https://www.w3.org/copyright/document-license-2023/
+
+The file is a Markdown conversion of the source HTML produced with pandoc. No
+normative text was altered, added, or removed during conversion; the criteria,
+their levels, definitions, and notes are reproduced verbatim. The W3C document
+license permits copying and distribution of the document, with attribution and
+without modification of its content, and requires that the copyright notice and
+this reference be preserved.
+
+The W3C specification text is NOT relicensed under MIT and is NOT the property
+of 84EM LLC. If you redistribute references/wcag-2.2-full.md, you must preserve
+this attribution and comply with the W3C Document License.
+
+WCAG® is a trademark of the W3C. This repository is not endorsed by or
+affiliated with the W3C.
