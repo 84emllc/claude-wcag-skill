@@ -28,8 +28,12 @@ A single agent skill (`SKILL.md`) plus the verbatim WCAG 2.2 specification it re
 
 ## Workflow to update the spec
 
+Use **pandoc 3.10** to reproduce the committed reference byte-for-byte. Other
+versions produce a large cosmetic no-op diff (still valid, but noisy). CI pins
+3.10 via the static binary; match it locally.
+
 ```bash
-./scripts/build-reference.sh     # fetch + convert + re-header
+./scripts/build-reference.sh     # fetch + convert + re-header (pandoc 3.10)
 node scripts/validate.mjs        # confirm counts, date, 4.1.1 absent
 # update SKILL.md if criteria changed, bump CHANGELOG + version
 ```

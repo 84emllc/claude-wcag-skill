@@ -14,6 +14,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   the clone-to-setup path is exercised on every push and PR.
 - Weekly scheduled CI run to surface upstream WCAG spec drift.
 
+### Fixed
+
+- Pin CI pandoc to 3.10 (static binary, sha256-verified) instead of floating
+  distro apt (3.1.3). Distro pandoc converts the same HTML to cosmetically
+  different Markdown, producing a false drift warning; pinning makes reference
+  regeneration byte-reproducible so the drift check fires only on real spec
+  changes.
+
 ## [0.1.0] - 2026-07-10
 
 ### Added
