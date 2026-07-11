@@ -3,7 +3,7 @@ SOURCE ATTRIBUTION - DO NOT RELICENSE
 This file reproduces "Web Content Accessibility Guidelines (WCAG) 2.2",
 W3C Recommendation 12 December 2024.
 Source: https://www.w3.org/TR/WCAG22/
-Copyright © 2024 World Wide Web Consortium (W3C). All Rights Reserved.
+Copyright © 2020-2024 World Wide Web Consortium (W3C). All Rights Reserved.
 Reproduced under the W3C Document License:
 https://www.w3.org/copyright/document-license-2023/
 This document is NOT covered by the repository's MIT license. It remains

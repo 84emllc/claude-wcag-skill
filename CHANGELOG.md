@@ -16,6 +16,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- SKILL.md common-mistakes table: placeholder-as-label now cites 3.3.2 Labels or Instructions instead of the incorrect 1.3.5 Identify Input Purpose (which governs autocomplete, not labeling).
+- SKILL.md frontmatter description now says "six A/AA criteria new in WCAG 2.2" (nine criteria are new in 2.2 overall; three are AAA).
+- validate.mjs emdash check now covers all four authored docs (SKILL.md, README.md, AGENTS.md, CHANGELOG.md), matching AGENTS.md rule 5.
+- build-reference.sh curl now uses --fail so an upstream HTTP error can no longer clobber the committed reference with an error page.
+- W3C copyright year in NOTICE, the reference attribution header, and the build script header corrected to 2020-2024 to match the spec's own copyright line.
 - Pin CI pandoc to 3.10 (static binary, sha256-verified) instead of floating
   distro apt (3.1.3). Distro pandoc converts the same HTML to cosmetically
   different Markdown, producing a false drift warning; pinning makes reference

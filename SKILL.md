@@ -1,6 +1,6 @@
 ---
 name: wcag-2.2-aa
-description: Use when auditing, remediating, or building any user-facing UI to meet WCAG 2.2 Level A/AA - accessibility review, a11y audit, "is this accessible", contrast/keyboard/focus/ARIA/alt-text/target-size/screen-reader issues, VPAT or ACR prep, or before shipping HTML/CSS, WordPress, React/Tailwind, or Hugo front-end to a client. Covers the six criteria new in WCAG 2.2.
+description: Use when auditing, remediating, or building any user-facing UI to meet WCAG 2.2 Level A/AA - accessibility review, a11y audit, "is this accessible", contrast/keyboard/focus/ARIA/alt-text/target-size/screen-reader issues, VPAT or ACR prep, or before shipping HTML/CSS, WordPress, React/Tailwind, or Hugo front-end to a client. Covers the six A/AA criteria new in WCAG 2.2.
 ---
 
 # WCAG 2.2 AA Accessibility
@@ -77,7 +77,7 @@ Full text in `references/wcag-2.2-full.md`. This is the scan list - every item m
 | "I loaded the page, looks fine." | Passive load misses keyboard traps, focus order, SR announcements, state changes. Exercise the flow. |
 | Reporting 4.1.1 Parsing | Removed in WCAG 2.2. Never cite it. |
 | Color alone signals state | 1.4.1 fails. Add text/icon/pattern. |
-| Placeholder used as the label | Not a programmatic label (1.3.5 / 4.1.2). Use `<label>`. |
+| Placeholder used as the label | Vanishes on input, fails 3.3.2 Labels or Instructions. Use `<label>`. |
 | `role="button"` on a `<div>` | Loses keyboard + focus for free. Use `<button>`. |
 | Paraphrasing criterion text into a deliverable | Quote `references/wcag-2.2-full.md` verbatim; paraphrase invents normative meaning. |
 | "Focus ring removed for design" | `outline:none` with no replacement fails 2.4.7. Provide a visible `:focus-visible` style. |
