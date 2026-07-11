@@ -58,7 +58,11 @@ for (const id of ['2.4.11', '2.5.7', '2.5.8', '3.2.6', '3.3.7', '3.3.8']) {
 }
 
 // No emdashes in authored docs.
-for (const [name, text] of [['SKILL.md', skill]]) {
+const authored = [['SKILL.md', skill]];
+for (const f of ['README.md', 'AGENTS.md', 'CHANGELOG.md']) {
+  authored.push([f, readFileSync(join(root, f), 'utf8')]);
+}
+for (const [name, text] of authored) {
   check(!text.includes('—'), `${name} contains an emdash; use a hyphen`);
 }
 
